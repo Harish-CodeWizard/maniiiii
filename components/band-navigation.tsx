@@ -44,7 +44,7 @@ export function BandNavigation() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link href="/tickets">
+            <Link href="/login?tickets=true">
               <Button className="bg-secondary hover:bg-secondary/80 text-secondary-foreground font-bold tracking-wide pulse-glow">
                 Get Tickets
               </Button>
@@ -80,7 +80,7 @@ export function BandNavigation() {
               </Link>
             ))}
             <div className="px-3 py-2">
-              <Link href="/tickets">
+              <Link href="/login?tickets=true">
                 <Button className="w-full bg-secondary hover:bg-secondary/80 text-secondary-foreground font-bold">
                   Get Tickets
                 </Button>
