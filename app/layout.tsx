@@ -5,8 +5,8 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Electric Pulse - Music Band',
+  description: 'Experience the electrifying energy of Electric Pulse, the ultimate rock band bringing high-energy performances to venues worldwide.',
   generator: 'v0.app',
 }
 

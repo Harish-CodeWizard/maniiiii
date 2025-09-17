@@ -2,8 +2,9 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Music } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function BandNavigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,8 +13,7 @@ export function BandNavigation() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Music", href: "/music" },
-    { name: "Tour", href: "/tour" },
-    { name: "Store", href: "/store" },
+    { name: "Tour", href: "/#upcoming-shows" },
     { name: "Contact", href: "/contact" },
   ]
 
@@ -23,7 +23,7 @@ export function BandNavigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Music className="h-8 w-8 text-accent" />
+            <Image src="/placeholder-logo.svg" alt="Electric Pulse Logo" width={32} height={32} />
             <span className="text-xl font-bold text-accent neon-text">ELECTRIC PULSE</span>
           </Link>
 
@@ -44,7 +44,7 @@ export function BandNavigation() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Link href="/login">
+            <Link href="/tickets">
               <Button className="bg-secondary hover:bg-secondary/80 text-secondary-foreground font-bold tracking-wide pulse-glow">
                 Get Tickets
               </Button>
@@ -80,7 +80,7 @@ export function BandNavigation() {
               </Link>
             ))}
             <div className="px-3 py-2">
-              <Link href="/login">
+              <Link href="/tickets">
                 <Button className="w-full bg-secondary hover:bg-secondary/80 text-secondary-foreground font-bold">
                   Get Tickets
                 </Button>

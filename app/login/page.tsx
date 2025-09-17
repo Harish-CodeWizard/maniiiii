@@ -20,10 +20,43 @@ export default function LoginPage() {
     name: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle login/signup logic here
-    console.log("Form submitted:", formData)
+    try {
+      const endpoint = isSignUp ? '/api/auth/signup' : '/api/auth/login'
+      const body = isSignUp
+        ? { name: formData.name, email: formData.email, password: formData.password }
+        : { email: formData.email, password: formData.password }
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        alert(data.message)
+        if (!isSignUp) {
+          // Store token for logged in user
+          localStorage.setItem('token', data.token)
+          // Redirect to home or dashboard
+          window.location.href = '/'
+        } else {
+          // Switch to login after signup
+          setIsSignUp(false)
+          setFormData({ email: formData.email, password: '', name: '' })
+        }
+      } else {
+        alert(data.error)
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('An error occurred. Please try again.')
+    }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

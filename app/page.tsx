@@ -4,6 +4,7 @@ import { ConcertCard } from "@/components/concert-card"
 import { GalleryGrid } from "@/components/gallery-grid"
 import { BandFooter } from "@/components/band-footer"
 import { NeonButton } from "@/components/neon-button"
+import Link from "next/link"
 
 const upcomingShows = [
   {
@@ -37,7 +38,7 @@ export default function Home() {
       <HeroSection />
 
       {/* Tour Dates Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="upcoming-shows" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-accent neon-text mb-4">Upcoming Shows</h2>
@@ -53,9 +54,11 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-8">
-            <NeonButton variant="secondary" size="lg">
-              View All Tour Dates
-            </NeonButton>
+            <Link href="/tour">
+              <NeonButton variant="secondary" size="lg">
+                View All Tour Dates
+              </NeonButton>
+            </Link>
           </div>
         </div>
       </section>
