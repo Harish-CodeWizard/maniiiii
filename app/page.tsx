@@ -41,7 +41,9 @@ export default function Home() {
       <section id="upcoming-shows" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-accent neon-text mb-4">Upcoming Shows</h2>
+            <Link href="/tour">
+              <h2 className="text-3xl sm:text-4xl font-bold text-accent neon-text mb-4 cursor-pointer hover:text-accent/80 transition-colors">Upcoming Shows</h2>
+            </Link>
             <p className="text-muted-foreground text-lg leading-relaxed">
               {"Experience the energy live. Get your tickets now."}
             </p>
