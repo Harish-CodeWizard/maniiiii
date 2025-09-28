@@ -41,7 +41,26 @@ export default function LoginPage() {
         alert('Please select a ticket type')
         return
       }
-      setBookingConfirmed(true)
+
+      try {
+        const response = await fetch('/api/book-ticket', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ ticketType: selectedTicket }),
+        })
+
+        if (response.ok) {
+          setBookingConfirmed(true)
+        } else {
+          const data = await response.json()
+          alert(data.error || 'Booking failed')
+        }
+      } catch (error) {
+        console.error('Booking error:', error)
+        alert('An error occurred while booking. Please try again.')
+      }
       return
     }
 

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1759055818228",
+    "ticketType": "golden",
+    "timestamp": "2025-09-28T10:36:58.228Z",
+    "price": 150
+  },
+  {
+    "id": "1759056369902",
+    "ticketType": "golden",
+    "timestamp": "2025-09-28T10:46:09.902Z",
+    "price": 150
+  },
+  {
+    "id": "1759056374725",
+    "ticketType": "economy",
+    "timestamp": "2025-09-28T10:46:14.725Z",
+    "price": 45
+  },
+  {
+    "id": "1759056628882",
+    "ticketType": "standard",
+    "timestamp": "2025-09-28T10:50:28.882Z",
+    "price": 75
+  },
+  {
+    "id": "1759056931050",
+    "ticketType": "platinum",
+    "timestamp": "2025-09-28T10:55:31.050Z",
+    "price": 120
+  }
+]

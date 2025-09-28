@@ -15,6 +15,7 @@ export function BandNavigation() {
     { name: "Music", href: "/music" },
     { name: "Tour", href: "/#upcoming-shows" },
     { name: "Contact", href: "/contact" },
+    { name: "Admin", href: "/admin" },
   ]
 
   return (

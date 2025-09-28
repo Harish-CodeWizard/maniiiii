@@ -4,5 +4,26 @@
     "name": "hers",
     "email": "sdsdsd@wxwdw",
     "password": "$2b$12$7VvtMz8DOK0tRWJzlTqF1.iVzoZtH/D/L8PZli2tdBp1mykA4/tCi"
+  },
+  {
+    "id": "1759056283923",
+    "name": "THEJESWAR V G",
+    "email": "testemail@gmail.com",
+    "password": "$2b$12$gJcQC4nmN6df2BV.abuime8GxnLdlmekKCH9alqSnhf/jwF0D/tl.",
+    "role": "admin"
+  },
+  {
+    "id": "1759057749108",
+    "name": "THEJESWAR V G",
+    "email": "admin@gmail.com",
+    "password": "$2b$12$pSo9ELxlAEhbAIF49Vt8sOX7HUINTG2SC9.8OasDBlXe5AuSp6ew2",
+    "role": "user"
+  },
+  {
+    "id": "1759058801027",
+    "name": "THEJESWAR V G",
+    "email": "test@gmail.com",
+    "password": "$2b$12$H08BcrG32cWOJ5aCx3cAaOplKtHsEmmyAv.4QCVJ1JWK3EEPCYqSW",
+    "role": "admin"
   }
 ]

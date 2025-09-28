@@ -10,6 +10,7 @@ interface User {
   name: string
   email: string
   password: string
+  role?: 'user' | 'admin'
 }
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key'
@@ -60,11 +61,22 @@ export function findUserByEmail(email: string): User | undefined {
   return users.find(user => user.email === email)
 }
 
-export function createUser(name: string, email: string, hashedPassword: string): User {
+export function createUser(name: string, email: string, hashedPassword: string, role: 'user' | 'admin' = 'user'): User {
   const users = readUsers()
   const id = Date.now().toString()
-  const newUser: User = { id, name, email, password: hashedPassword }
+  const newUser: User = { id, name, email, password: hashedPassword, role }
   users.push(newUser)
   writeUsers(users)
   return newUser
+}
+
+export function isAdmin(userId: string): boolean {
+  const users = readUsers()
+  const user = users.find(u => u.id === userId)
+  return user?.role === 'admin'
+}
+
+export function getUserById(userId: string): User | undefined {
+  const users = readUsers()
+  return users.find(u => u.id === userId)
 }
